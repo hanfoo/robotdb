@@ -1,0 +1,52 @@
+[package]
+name = "robotdb"
+version = "0.1.0"
+edition = "2021"
+authors = ["RobotDB Contributors"]
+description = "A high-performance embedded relational database written in Rust, inspired by SQLite"
+license = "MIT"
+keywords = ["database", "embedded", "sql", "sqlite", "storage"]
+categories = ["database"]
+
+[lib]
+name = "robotdb"
+path = "src/lib.rs"
+
+[[bin]]
+name = "robotdb-cli"
+path = "src/bin/cli.rs"
+
+[[bench]]
+name = "benchmarks"
+harness = false
+
+[dependencies]
+thiserror = "1.0"
+anyhow = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+bincode = "1.3"
+parking_lot = "0.12"
+crossbeam = "0.8"
+xxhash-rust = { version = "0.8", features = ["xxh3"] }
+log = "0.4"
+env_logger = "0.11"
+rustyline = "14.0"
+dirs = "5.0"
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+tempfile = "3.0"
+rand = "0.8"
+rusqlite = { version = "0.31", features = ["bundled"] }
+proptest = "1.4"
+rayon = "1.8"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[profile.bench]
+opt-level = 3
+lto = true
