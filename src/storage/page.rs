@@ -141,7 +141,7 @@ impl std::fmt::Debug for Page {
 /// 数据库文件头（存储在第 0 页 payload 区域）
 #[derive(Debug, Clone)]
 pub struct DbHeader {
-    /// 魔数："ROBOTDB01"
+    /// 魔数："ROBOTDB1"（固定 8 字节）
     pub magic: [u8; 8],
     /// 页面大小
     pub page_size: u16,
@@ -160,7 +160,7 @@ pub struct DbHeader {
 }
 
 impl DbHeader {
-    pub const MAGIC: &'static [u8; 8] = b"ROBOTDB01";
+    pub const MAGIC: &'static [u8; 8] = b"ROBOTDB1";
     pub const SIZE: usize = 8 + 2 + 2 + 4 + 4 + 4 + 4 + 8; // = 36 bytes
 
     pub fn new() -> Self {
