@@ -73,12 +73,20 @@ Go to the [GitHub Releases](https://github.com/hanfoo/robotdb/releases) page and
 | macOS (Apple Silicon) | `robotdb-<version>-aarch64-apple-darwin.tar.gz` |
 | macOS (Intel) | `robotdb-<version>-x86_64-apple-darwin.tar.gz` |
 | Linux (x86_64) | `robotdb-<version>-x86_64-unknown-linux-gnu.tar.gz` |
+| Windows (x86_64) | `robotdb-<version>-x86_64-pc-windows-msvc.zip` |
 
 Then extract and run:
 
 ```bash
+# macOS / Linux
 tar xzf robotdb-*.tar.gz
 ./robotdb-cli my_database.db
+```
+
+```powershell
+# Windows
+Expand-Archive robotdb-*.zip -DestinationPath .
+.\robotdb-cli.exe my_database.db
 ```
 
 ### Using the CLI
