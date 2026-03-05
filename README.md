@@ -64,6 +64,24 @@ fn main() -> robotdb::Result<()> {
 }
 ```
 
+### Pre-built Binaries
+
+Download the latest pre-built binary for your platform from [GitHub Releases](https://github.com/hanfoo/robotdb/releases):
+
+```bash
+# macOS (Apple Silicon)
+curl -L https://github.com/hanfoo/robotdb/releases/latest/download/robotdb-cli-aarch64-apple-darwin.tar.gz | tar xz
+./robotdb-cli my_database.db
+
+# macOS (Intel)
+curl -L https://github.com/hanfoo/robotdb/releases/latest/download/robotdb-cli-x86_64-apple-darwin.tar.gz | tar xz
+./robotdb-cli my_database.db
+
+# Linux (x86_64)
+curl -L https://github.com/hanfoo/robotdb/releases/latest/download/robotdb-cli-x86_64-unknown-linux-gnu.tar.gz | tar xz
+./robotdb-cli my_database.db
+```
+
 ### Using the CLI
 
 ```bash
